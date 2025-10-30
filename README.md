@@ -43,7 +43,7 @@ Follow these steps to set up the project locally:
 - Download and install the latest .NET SDK from:
    - https://dotnet.microsoft.com/download   
 - Verify installation:
-  ---
+---
 bash:
 dotnet --version
 ---
