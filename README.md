@@ -57,7 +57,7 @@ Make sure you have the following installed:
 - dotnet build
 
 ### 🪜 Step 5: Apply Database Migrations (if using EF Core)
-dotnet ef database update
+- dotnet ef database update
 
 ---
 
