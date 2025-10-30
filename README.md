@@ -40,30 +40,41 @@ Follow these steps to set up the project locally:
    - cd 360_InventoryApp
 
 2. Install .NET SDK
--Download and install the latest .NET SDK from:
-   - https://dotnet.microsoft.com/download
-     
--Verify installation:
+- Download and install the latest .NET SDK from:
+   - https://dotnet.microsoft.com/download   
+- Verify installation:
+  ---
 bash:
 dotnet --version
+---
 
 3. Set Up Database (MySQL via XAMPP)
 - Open XAMPP Control Panel → Start Apache and MySQL
 - Open phpMyAdmin → Create a new database (example: inventorydb)
 - Update the connection string in appsettings.json:
+---
 json
 "ConnectionStrings": {
   "DefaultConnection": "server=localhost;port=3306;database=inventorydb;user=root;password=;"
 }
+---
 
 4. Install Entity Framework Core Tools
-dotnet tool install --global dotnet-ef
+---
+   dotnet tool install --global dotnet-ef
+---
 
 5. Apply Database Migration
-dotnet ef database update
+---
+   dotnet ef database update
+---
 
 6. Build the Project
-dotnet build
+---
+   dotnet build
+---
 
 7. Run the Project
-dotnet run
+---
+   dotnet run
+---
