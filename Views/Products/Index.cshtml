@@ -1,0 +1,36 @@
+@model List<_360_InventoryApp.Models.Product>
+<div class="container mt-4">
+    <h2>Products</h2>
+    <a href="/Products/Create" class="btn btn-primary mb-3">Add New Product</a>
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">No products found.</div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th><th>SKU</th><th>Name</th><th>Description</th><th>Stock</th><th>Supplier</th><th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var p in Model)
+                {
+                    <tr>
+                        <td>@p.Id</td>
+                        <td>@p.SKU</td>
+                        <td>@p.Name</td>
+                        <td>@p.Description</td>
+                        <td>@p.Stock</td>
+                        <td>@p.Supplier</td>
+                        <td>
+                            <a href="/Products/Edit/@p.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    <a href="/Home/Index" class="btn btn-link mt-3">Back to Home</a>
+</div>

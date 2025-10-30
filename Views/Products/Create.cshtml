@@ -1,0 +1,30 @@
+@model _360_InventoryApp.Models.Product
+<div class="container mt-4">
+<h2>Add Product</h2>
+<form asp-action="Create" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="SKU" class="form-label">SKU</label>
+        <input name="SKU" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+        <label for="Name" class="form-label">Name</label>
+        <input name="Name" class="form-control" required />
+    </div>
+    <div class="col-md-12">
+        <label for="Description" class="form-label">Description</label>
+        <input name="Description" class="form-control" />
+    </div>
+    <div class="col-md-6">
+        <label for="Stock" class="form-label">Stock</label>
+        <input name="Stock" class="form-control" type="number" required min="0" />
+    </div>
+    <div class="col-md-6">
+        <label for="Supplier" class="form-label">Supplier</label>
+        <input name="Supplier" class="form-control" />
+    </div>
+    <div class="col-12 mt-2">
+        <button type="submit" class="btn btn-success">Add</button>
+        <a href="/Products" class="btn btn-outline-secondary ms-2">Cancel</a>
+    </div>
+</form>
+</div>

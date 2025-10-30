@@ -1,0 +1,68 @@
+@model _360_InventoryApp.Models.Product
+@{
+    ViewBag.Title = "Edit Product";
+}
+
+<div class="container mt-4">
+    <div class="col-lg-6 mx-auto">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Edit Product Details</h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit" method="post" class="needs-validation" novalidate>
+                    <input type="hidden" name="Id" value="@Model.Id" />
+
+                    <div class="mb-3">
+                        <label for="SKU" class="form-label">SKU</label>
+                        <input type="text" name="SKU" class="form-control" value="@Model.SKU" required autocomplete="off" maxlength="50"/>
+                        <div class="invalid-feedback">SKU is required.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" name="Name" class="form-control" value="@Model.Name" required maxlength="100"/>
+                        <div class="invalid-feedback">Name is required.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Description</label>
+                        <textarea name="Description" class="form-control" rows="2" maxlength="150">@Model.Description</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Stock" class="form-label">Stock</label>
+                        <input type="number" name="Stock" class="form-control" value="@Model.Stock" required min="0"/>
+                        <div class="invalid-feedback">Stock must be a non-negative number.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Supplier" class="form-label">Supplier</label>
+                        <input type="text" name="Supplier" class="form-control" value="@Model.Supplier" maxlength="100"/>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="submit" class="btn btn-success px-4">Save Changes</button>
+                        <a href="/Products" class="btn btn-outline-secondary ms-2">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+        // Bootstrap validation
+        (function () {
+          'use strict';
+          var forms = document.querySelectorAll('.needs-validation');
+          Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        })();
+        </script>
+    </div>
+</div>
