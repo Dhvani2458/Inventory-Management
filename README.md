@@ -36,7 +36,7 @@ It allows administrators to manage products, track quantities, handle employee d
 Follow these steps to set up the project locally:
 
 1. Clone the Repository
-   - git clone https://github.com/<your-username>/360_InventoryApp.git
+   - git clone https://github.com//360_InventoryApp.git
    - cd 360_InventoryApp
 
 2. Install .NET SDK
