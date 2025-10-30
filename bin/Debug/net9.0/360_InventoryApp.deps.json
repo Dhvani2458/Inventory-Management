@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "360_InventoryApp/1.0.0": {
+        "runtime": {
+          "360_InventoryApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "360_InventoryApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
