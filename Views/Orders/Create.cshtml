@@ -1,0 +1,33 @@
+@model _360_InventoryApp.Models.Order
+@{
+    var products = ViewBag.Products as List<_360_InventoryApp.Models.Product>;
+}
+<div class="container mt-4">
+    <h2>Place New Order</h2>
+    <form asp-action="Create" method="post" class="row g-3">
+        <div class="col-md-6">
+            <label for="CustomerName" class="form-label">Customer Name</label>
+            <input name="CustomerName" class="form-control" required />
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Order Item</label>
+            <div class="input-group">
+                <select name="Items[0].ProductId" class="form-select">
+                    @if (products != null)
+                    {
+                        @foreach(var product in products)
+                        {
+                            <option value="@product.Id">@product.Name</option>
+                        }
+                    }
+                </select>
+                <input name="Items[0].Quantity" class="form-control" type="number" value="1" min="1"/>
+                <input name="Items[0].UnitPrice" class="form-control" type="number" value="0" min="0" step="0.01"/>
+            </div>
+        </div>
+        <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-success">Place Order</button>
+            <a href="/Orders" class="btn btn-outline-secondary ms-2">Cancel</a>
+        </div>
+    </form>
+</div>

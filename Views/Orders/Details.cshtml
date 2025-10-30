@@ -1,0 +1,14 @@
+@model _360_InventoryApp.Models.Order
+<h2>Order Details</h2>
+<p>ID: @Model.Id</p>
+<p>Customer: @Model.CustomerName</p>
+<p>Date: @Model.OrderDate</p>
+<p>Total: @Model.Total</p>
+<h3>Items</h3>
+<ul>
+@foreach(var item in Model.Items)
+{
+    <li>@item.ProductName - Qty: @item.Quantity, Unit Price: @item.UnitPrice</li>
+}
+</ul>
+<a href="/Orders">Back</a>
