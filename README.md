@@ -45,7 +45,7 @@ Make sure you have the following installed:
 
 ### 🪜 Step 1: Clone the Repository
 - bash:
-- git clone https://github.com/Dhvani2458/InventoryManagementApp.git
+- git clone https://github.com/Dhvani2458/InventoryManagement.git
 
 ### 🪜 Step 2: Navigate into the Project Folder
 - cd InventoryManagementSystem
